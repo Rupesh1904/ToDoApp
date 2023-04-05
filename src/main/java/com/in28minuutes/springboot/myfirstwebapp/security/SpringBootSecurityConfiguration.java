@@ -1,7 +1,5 @@
-package com.in28minuutes.springboot.myfirstwebapp.security;
-
+package com.in28minuutes.springboot.myfirstwebapp.security; 
 import java.util.function.Function;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
