@@ -35,6 +35,11 @@
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>glassfish-jstl</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -51,6 +56,7 @@
 			<artifactId>bootstrap-datepicker</artifactId>
 			<version>1.9.0</version>
 		</dependency>
+
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
