@@ -14,15 +14,19 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SpringBootSecurityConfiguration {
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager(){
+        UserDetails userDetails = createNewUser("rupesh", "bhosdu");
+        
+        return new InMemoryUserDetailsManager(userDetails);
+    }
+    private UserDetails createNewUser(String username, String password) {
         Function<String, String> passwordEncoder
         = input->passwordEncoder().encode(input);
-        UserDetails userDetails=User.builder().
-                                    passwordEncoder(passwordEncoder)
-                                    .username("rupesh")
-                                    .password("bhosdu")
-                                    .roles("USER","ADMIN")
-                                    .build();
-        return new InMemoryUserDetailsManager(userDetails);
+        UserDetails userDetails = User.builder().passwordEncoder(passwordEncoder)
+                .username(username)
+                .password(password)
+                .roles("USER", "ADMIN")
+                .build();
+        return userDetails;
     }
     @Bean
     public PasswordEncoder passwordEncoder(){
