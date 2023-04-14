@@ -9,6 +9,11 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 public class ToDo {
+
+    
+    public ToDo() {
+    }
+
     public ToDo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
         this.username = username;
