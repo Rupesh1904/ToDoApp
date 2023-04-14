@@ -2,10 +2,13 @@ package com.in28minuutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
+@Entity
 public class ToDo {
-
     public ToDo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
         this.username = username;
@@ -13,6 +16,8 @@ public class ToDo {
         this.targetDate = targetDate;
         this.done = done;
     }
+    @Id
+    @GeneratedValue
     private int id;
     private String username;
     @Size(min = 10, message = "Please Enter Minimum 10 Characters")
